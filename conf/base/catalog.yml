@@ -5,11 +5,12 @@
 
 companies:
   type: CSVLocalDataSet
-  path: data/01_raw/companies.csv
+  filepath: data/01_raw/companies.csv
 
 reviews:
   type: CSVLocalDataSet
-  path: data/01_raw/reviews.csv
+  filepath: data/01_raw/reviews.csv
 
-# shuttles:
-#   type:
+shuttles:
+  type: kedro_tutorial.io.xls_local.ExcelLocalDataSet
+  filepath: data/01_raw/shuttles.xlsx

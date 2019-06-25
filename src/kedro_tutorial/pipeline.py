@@ -27,7 +27,11 @@
 # limitations under the License.
 """Pipeline construction."""
 
-from kedro.pipeline import Pipeline
+from kedro.pipeline import node, Pipeline
+from kedro_tutorial.nodes.data_engineering import (
+    preprocess_companies,
+    preprocess_shuttles
+)
 
 # Here you can define your data-driven pipeline by importing your functions
 # and adding them to the pipeline as follows:
@@ -57,6 +61,9 @@ def create_pipeline(**kwargs):
 
     """
 
-    pipeline = Pipeline([])
+    pipeline = Pipeline([
+        node(preprocess_companies, "companies", "preprocessed_companies"),
+        node(preprocess_shuttles, "shuttles", "preprocessed_shuttles"),
+    ])
 
     return pipeline
