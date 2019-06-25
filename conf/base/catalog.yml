@@ -14,3 +14,13 @@ reviews:
 shuttles:
   type: kedro_tutorial.io.xls_local.ExcelLocalDataSet
   filepath: data/01_raw/shuttles.xlsx
+
+# Same name as specified in src/kedro_tutorial/pipeline.py step (last parameter)
+preprocessed_companies:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_companies.csv
+
+# Same name as specified in src/kedro_tutorial/pipeline.py step (last parameter)
+preprocessed_shuttles:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
